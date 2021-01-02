@@ -33,7 +33,15 @@ package module01
 // 3. Always return the index of the two values who have a minimal
 //    difference. Eg prefer the values 2, 2 over 1, 3 over 0, 4
 //    for the sum of 4.
-//
+
 func FindTwoThatSum(numbers []int, sum int) (int, int) {
-	return 0, 0
+	//O(n^2) time complexity
+	for i := range numbers {
+		for j := range numbers {
+			if i != j && numbers[i]+numbers[j] == sum {
+				return i, j
+			}
+		}
+	}
+	return -1, -1
 }
