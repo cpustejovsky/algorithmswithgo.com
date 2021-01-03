@@ -24,6 +24,17 @@ package module01
 //   Fibonacci(7) => 13
 //   Fibonacci(14) => 377
 //
+
+var fib = map[int]int{
+	0: 0,
+	1: 1,
+}
+
 func Fibonacci(n int) int {
-	return 0
+	if val, ok := fib[n]; ok {
+		return val
+	}
+
+	fib[n] = Fibonacci(n-1) + Fibonacci(n-2)
+	return Fibonacci(n-1) + Fibonacci(n-2)
 }

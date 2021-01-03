@@ -22,5 +22,21 @@ package module01
 //   Factor([], 4) // []int{4}
 //
 func Factor(primes []int, number int) []int {
-	return nil
+	var factors []int
+	for _, prime := range primes {
+		for prime != 1 && number%prime == 0 {
+			number /= prime
+			factors = append(factors, prime)
+		}
+	}
+
+	if number > 1 {
+		factors = append(factors, number)
+	}
+
+	return factors
 }
+
+// func modulus(number, prime int) bool {
+// 	return number%prime == 0
+// }

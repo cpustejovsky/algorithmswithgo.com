@@ -19,6 +19,7 @@ func TestFactor(t *testing.T) {
 		{tenPrimes, 30, []int{2, 3, 5}},
 		{tenPrimes, 720, []int{2, 2, 2, 2, 3, 3, 5}},
 		{tenPrimes, 4, []int{2, 2}},
+		{[]int{3, 5}, 720, []int{3, 3, 5, 16}},
 	}
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("%v with primes %v", tc.number, tc.primes), func(t *testing.T) {
